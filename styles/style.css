@@ -1,0 +1,169 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  text-decoration: none;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: #eee6c4;
+}
+
+.loginForm {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 600px;
+  padding: 30px, 20px;
+  background-color: #ffffff;
+  text-align: center;
+  border: 1px solid #000000;
+  border-radius: 15px;
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+  margin: 0 auto;
+}
+.phForm {
+  border-bottom: 2px solid #adadad;
+  padding: 10px 10px;
+}
+
+.loginForm h2 {
+  text-align: center;
+  margin: 30px;
+  font-family: '돋움', dotum, '굴림', gulim, arial, helvetica, sans-serif;
+}
+
+.idForm {
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+}
+.nameForm {
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+}
+.passForm {
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+}
+.emailForm {
+  border-bottom: 2px solid #adadad;
+  margin: 30px;
+  padding: 10px 10px;
+}
+.user_id {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #636e72;
+  font-size: 16px;
+  height: 25px;
+  background: none;
+}
+.username {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #636e72;
+  font-size: 16px;
+  height: 25px;
+  background: none;
+}
+
+.user_PW {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #636e72;
+  font-size: 16px;
+  height: 25px;
+  background: none;
+}
+.userph {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #636e72;
+  font-size: 16px;
+  height: 25px;
+  background: none;
+}
+.useremail {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #636e72;
+  font-size: 16px;
+  height: 25px;
+  background: none;
+}
+.email {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #636e72;
+  font-size: 16px;
+  height: 25px;
+  background: none;
+}
+
+.btn {
+  position: relative;
+  left: 40%;
+  transform: translateX(-50%);
+  margin-bottom: 15px;
+  width: 80%;
+  height: 40px;
+  background: linear-gradient(125deg, #000000, #4c4c4d, #feffff);
+  background-position: left;
+  background-size: 200%;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+  display: inline;
+}
+.clear {
+  position: relative;
+  left: 40%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  width: 80%;
+  height: 40px;
+  background: linear-gradient(125deg, #000000, #4c4c4d, #feffff);
+  background-position: left;
+  background-size: 200%;
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.4s;
+  display: inline;
+}
+.btn:hover {
+  background-position: right;
+}
+.clear:hover {
+  background-position: right;
+}
+.bottomText {
+  text-align: center;
+  font-size: 14px;
+  line-height: 14px;
+
+  color: #8e8e8e;
+}
+
+.Clear {
+  text-align: center;
+}

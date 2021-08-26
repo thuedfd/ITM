@@ -1,0 +1,108 @@
+<DOCTYPE HTML5>
+    <html>
+      <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+      </head>
+      
+      <body width="100%" height="100%">
+        <form action="logincheck.html" class="loginForm">
+            <a href= "login.html"><img src="images/a.jpg" width="150" height="100"><a>
+            <h2>비밀번호 찾기</h2>
+            <div class="nameForm" id="first">
+                <input class="username" id = "username" type="text" placeholder="이름 입력">
+            </div>
+            <div class="idForm" id="second">
+                <input class="user_ID" id = "user_ID" type="text" placeholder="아이디 입력">
+            </div>
+            <div class="emailForm" id="sixth">
+                <input class="useremail" id = "email" type="eamil" placeholder="이메일 입력">
+            </div>
+            
+            <div class="phForm" id="seventh">
+                <input class="userph" id = "ph" type="tel" placeholder="핸드폰 번호 입력">
+            </div>
+            <button type="button" class="clear" onclick="findpw()">
+                제출
+            </button>
+            <div class="bottomText" >
+                <tr>
+                    <td><a href="findID.html">아이디 찾기</a></td>
+                </tr>
+            </div>
+            
+            
+        </form>
+        
+      </body>
+        <script>
+            const whosname = document.querySelector("#first")
+            const check_name = whosname.querySelector("input")
+  
+  
+            const whosid = document.querySelector("#second")
+            const check_id = whosid.querySelector("input");
+  
+  
+            const whosemail = document.querySelector("#sixth")
+            const check_email = whosemail.querySelector("input");
+  
+  
+            const whosph = document.querySelector("#seventh")
+            const check_ph = whosph.querySelector("input");
+  
+            var a = new Array();
+            
+            
+            function findpw() {    
+                const username = check_name.value;
+                const userid = check_id.value;
+                
+                const useremail = check_email.value;
+                const userph = check_ph.value;
+                
+                for(j=0; j < localStorage.length; j++){
+                    a[j] = localStorage.key(j);    
+                }
+                
+                
+                for(i=0 ; i <localStorage.length ; i++){
+                    var userkey = JSON.parse(localStorage.getItem(a[i]));
+                    console.log(userkey)
+                    if(userkey[0]["user_name"] === username){
+                        
+                        if(userkey[0]["user_ID"] === userid){
+                    
+                            if(userkey[0]["user_email"] === useremail){
+                    
+                                if(userkey[0]["user_phone"] === userph){
+                                    
+                                    const inputpw = prompt("새로운 비밀번호를 입력하세요")
+                                    userkeycopy = userkey
+                                    localStorage.removeItem(userkey[0]["user_ID"]);
+
+                                    userkeycopy[0]["user_PW"] = inputpw
+                                    localStorage.setItem(userkeycopy[0]["user_ID"], JSON.stringify(userkeycopy))
+                                    
+                                    return;
+                                }
+                                
+                            }
+                            
+                        }
+                    
+                    }
+
+                }
+            alert("정보가 일치하지 않습니다.")
+            location.replace=("findPW.html")
+            }
+            
+  
+        
+        
+        </script>
+         
+    </html>
+    
+     
+   

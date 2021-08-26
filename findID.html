@@ -1,0 +1,70 @@
+<DOCTYPE HTML5>
+    <html>
+      <head>
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+      </head>
+      
+      <body width="100%" height="100%">
+        <form class="loginForm">
+            <a href= "login.html"><img src="images/a.jpg" width="150" height="100"><a>
+            <h2>아이디 찾기</h2>
+            <div class="nameForm" id="first">
+                <input class="username" id = "username" type="text" placeholder="이름 입력">
+            </div>
+            <div class="emailForm" id="sixth">
+                <input class="useremail" id = "user_email" type="eamil" placeholder="이메일 입력">
+            </div>
+            <button type="button" class="clear" onclick="findid()">
+                제출
+            </button>
+            
+            <div class="bottomText" >
+                <tr>
+                    <td><a href="findPW.html">비밀번호 찾기</a></td>
+                </tr>
+            </div>
+        </form>
+          
+      </body>
+        <script>
+            const name = document.querySelector("#first")
+            const check_name = name.querySelector("input")
+            
+            const email = document.querySelector("#sixth")
+            const check_email = email.querySelector("input")
+            var a = new Array();
+
+            
+            
+            function findid() {
+                const userName = check_name.value;
+                const useremail = check_email.value;
+
+                for(j=0; j < localStorage.length; j++){
+                    a[j] = localStorage.key(j);
+                }
+
+                for(i=0 ; i <localStorage.length ; i++){
+                    var userkey = JSON.parse(localStorage.getItem(a[i]));
+                    console.log(userkey)
+                    if(userkey[0]["user_name"] === userName){
+                        console.log(1)
+                        if(userkey[0]["user_email"] === useremail){
+                            alert("가입된 아이디 : " + userkey[0]["user_ID"])
+                            location.href=("login.html")
+                            return;
+                        }
+                        
+                    }
+                    
+                }
+            alert("정보가 일치하지 않습니다.")
+            location.replace=("findID.html")
+            }
+            
+        </script>
+         
+    </html>
+    
+            
+   

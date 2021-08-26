@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>도서관 예약 메인페이지</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/modal.css" />
+  </head>
+
+  <body>
+    <img src="도서관 로고.png" width="80px" />
+    <h1>도서관 자리현황</h1>
+    <nav>
+      <button onclick="window.location.href='tutorial.html'">쪽지함</button>
+      <button onclick="window.location.href='login.html'">로그아웃</button>
+    </nav>
+    <div id="redbox"></div>
+    <div id="graybox"></div>
+    <table id="seat_table" style="width: 500px; height: 200px">
+      <caption>
+        자리 배치도
+      </caption>
+      <tr>
+        <td>
+          <button class="seat" id="seat1">1</button>
+        </td>
+        <td>
+          <button class="seat" id="seat2">2</button>
+        </td>
+        <td>
+          <button class="seat" id="seat3">3</button>
+        </td>
+        <td>
+          <button class="seat" id="seat4">4</button>
+        </td>
+        <td>
+          <button class="seat" id="seat5">5</button>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <button class="seat" id="seat6">6</button>
+        </td>
+        <td>
+          <button class="seat" id="seat7">7</button>
+        </td>
+        <td>
+          <button class="seat" id="seat8">8</button>
+        </td>
+        <td>
+          <button class="seat" id="seat9">9</button>
+        </td>
+        <td>
+          <button class="seat" id="seat10">10</button>
+        </td>
+      </tr>
+    </table>
+
+    <div id="reserv">예약중</div>
+    <div id="reserv">예약가능</div>
+
+
+    <!-- Modal -->
+  
+      <div id="modal">
+        <div class="modal_content">
+          <button id="close-modal" class="modal_close_btn">X</button>
+          <h2 class="modal-title">예약하기</h2>
+        
+          <div>
+            <button type="button" id="seat1" class="time-select">
+              00~02</button
+            ><button type="button" id="seat7" class="time-select">
+              12~14
+            </button>
+          </div>
+  
+        <div>
+          <button type="button" id="seat2" class="time-select">
+            02~04</button
+          ><button type="button" id="seat8" class="time-select">
+            14~16
+          </button>
+        </div>
+  
+        <div>
+          <button type="button" id="seat3" class="time-select">
+            04~06</button
+          ><button type="button" id="seat9" class="time-select">
+            16~18
+          </button>
+        </div>
+  
+        <div>
+          <button type="button" id="seat4" class="time-select">
+            06~08</button
+          ><button type="button" id="seat10" class="time-select">
+            18~20
+          </button>
+        </div>
+  
+        <div>
+          <button type="button" id="seat5"  class="time-select">
+            08~10</button
+          ><button type="button" id="seat11" class="time-select">
+            20~22
+          </button>
+        </div>
+  
+        <div>
+          <button type="button" id="seat6" class="time-select">
+            10~12</button
+          ><button type="button" id="seat12" class="time-select">
+            22~24
+          </button>
+        </div>
+        
+          <div class="button-list">
+            <p class="info-box">user ID : <span class="user-info"> </span></p>
+  
+            
+            </button>
+            <div class="button-group">
+              <button type="button" id="messege" class="close-button">
+                쪽지 보내기
+              </button>
+              <button type="button" id="reservation-button" class="close-button">
+                예약하기
+              </button>
+            </div>
+          </div>
+        </div>
+  
+        <div class="modal_layer"></div>
+      </div>
+    </div>
+    
+  </body>
+</html>
+<script src="./scripts/seat.js"></script>

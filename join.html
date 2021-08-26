@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Library</title>
+  </head>
+  <body>
+    <section>
+      <h1>회원가입 페이지</h1>
+    </section>
+
+    <section>
+      <form name="login" id="login" action="index.html" method="post">
+        아이디확인<br />
+        <input type="text" id="user_ID" placeholder="아이디 입력" />
+        <input
+          type="button"
+          id="user_IDcheck"
+          value="중복확인"
+          onclick="return validation()"
+        />
+
+        <br />
+        비밀번호<br />
+        <input type="password" id="user_PW" value="" /><br />
+        비밀번호 재확인<br />
+        <input type="password" id="user_PW2" value="" />
+        <input type="button" id="user_PWcheck" value="비밀번호 재확인" />
+        <br /><br />
+        이름<br />
+        <input type="text" id="user_name" value="" /> <br />
+        생년월일<br />
+        <select id="year">
+          <option value="">-- 선택 --</option>
+          <option value="1995">1995</option>
+          <option value="1996">1996</option>
+          <option value="1997">1997</option>
+          <option value="1998">1998</option>
+          <option value="1999">1999</option>
+          <option value="2000">2000</option>
+          <option value="2000">2001</option>
+          <option value="2000">2002</option>
+          <option value="2000">2003</option>
+        </select>
+        <select id="month">
+          <option value="">-- 선택 --</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+        </select>
+        <select id="day">
+          <option value="">-- 선택 --</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="9">9</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+          <option value="15">15</option>
+          <option value="16">16</option>
+          <option value="17">17</option>
+          <option value="18">18</option>
+          <option value="19">19</option>
+          <option value="20">20</option>
+          <option value="21">21</option>
+          <option value="22">22</option>
+          <option value="23">23</option>
+          <option value="24">24</option>
+          <option value="25">25</option>
+          <option value="26">26</option>
+          <option value="27">27</option>
+          <option value="28">28</option>
+          <option value="29">29</option>
+          <option value="30">30</option>
+          <option value="31">31</option>
+        </select>
+        <br /><br />
+        성별<br />
+        <label for="man">남자</label>
+        <input type="radio" name="gender" value="man" id="man" />
+        <label for="woman">여자</label>
+        <input type="radio" name="gender" value="woman" id="woman" />
+        <br /><br />
+        이메일<br /><input
+          type="email"
+          id="user_email"
+          placeholder="email@gmail.com"
+        /><br /><br />
+        휴대전화<br />
+        <input type="text" id="user_phone" placeholder="010-****-****" />
+
+        <br /><br /><br />
+
+        <input
+          type="button"
+          id="button1"
+          onclick="button1_click()"
+          name="clicked_id"
+          value="가입하기"
+        />
+      </form>
+    </section>
+  </body>
+  <script>
+    function button1_click() {
+      var ui1 = document.getElementById('user_ID').value;
+      var ui2 = document.getElementById('user_PW').value;
+      var ui3 = document.getElementById('user_name').value;
+      var ui4 = document.getElementById('year').value;
+      var ui5 = document.getElementById('month').value;
+      var ui6 = document.getElementById('day').value;
+      var ui7 = document.getElementById('user_email').value;
+      var ui8 = document.getElementById('user_phone').value;
+      var obj_length = document.getElementsByName('gender').length;
+      var gender;
+
+      for (var i = 0; i < obj_length; i++) {
+        if (document.getElementsByName('gender')[i].checked == true) {
+          gender = document.getElementsByName('gender')[i].value;
+          break;
+        }
+      }
+
+      // console.log(user_ID, user_PW, user_name, year, month, day, gender, user_email, user_phone);
+
+      //   localStorage.setItem("userinfo", JSON.stringify(test));
+      //   var userinfomation = JSON.parse(localStorage.getItem("userinfo"));
+
+      var userkey = ui1;
+      var userInfo = [
+        {
+          user_ID: ui1,
+          user_PW: ui2,
+          user_name: ui3,
+          year: ui4,
+          month: ui5,
+          day: ui6,
+          gender: gender,
+          user_email: ui7,
+          user_phone: ui8,
+          seat: '',
+          starttime: '',
+          endtime: '',
+        },
+      ];
+
+      localStorage.setItem(userkey, JSON.stringify(userInfo));
+      console.log(localStorage.key(userkey));
+
+      console.log(userInfo);
+      var userinfomation = JSON.parse(localStorage.getItem(userkey));
+      alert('회원가입이 완료되었습니다.');
+      document.getElementById('login').reset();
+
+      window.location.href = './login.html';
+    }
+
+    //아이디 입력 여부
+
+    function validation() {
+      var id = document.getElementById('user_ID').value;
+
+      var flag = true;
+
+      if (id == '') {
+        alert('아이디를 입력해주세요.');
+
+        return;
+      }
+
+      for (var i = 0; i < localStorage.length; i++) {
+        if (id == localStorage.key(i)) {
+          flag = false;
+
+          break;
+        }
+      }
+
+      if (flag) alert('사용 가능한 아이디 입니다.');
+      else alert('중복된 아이디 입니다.');
+    }
+  </script>
+</html>
