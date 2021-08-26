@@ -7,6 +7,8 @@ const closeModal = document.querySelector('#close-modal');
 
 const userInfo = document.querySelector('.user-info');
 
+const currentUser = document.querySelector('#currentUser');
+
 seats.forEach((seat) => {
   seat.addEventListener('click', () => {
     modal.style.display = 'flex';
@@ -14,10 +16,42 @@ seats.forEach((seat) => {
   });
 });
 
+function showTableUser(){
+  const convertUserInfo = JSON.parse(localStorage.getItem("__user__"+id));
+  console.log(convertUserInfo);
+  userInfo.innerHTML = convertUserInfo.user_ID;
+}
+
+function paintUser(){
+  
+  const data = JSON.parse(sessionStorage.getItem("userinfo"));  
+  currentUserName = data[0].user_name;  
+
+  let span = document.createElement("span");
+  currentUser.appendChild(span);
+  span.innerText = "환영합니다. " + currentUserName + "님";
+}
+
+
+function seatEnable(){
+  today = new Date();
+  for(var i=1;i<13;i++){
+    if(i*2<=today.getHours()){
+      enabled(i);
+    }
+  }
+}
+
+function enabled(seatnumber){
+  var button_joinus = document.getElementById("seat_"+seatnumber);
+  button_joinus.disabled=true;
+}
+
+
 timeSelect.forEach((time) => {
   // TODO: forEach 밖에서 handle 한 후 1회성으로 돌아가게끔 처리
   // const convertUserInfo = JSON.parse(localStorage.getItem(123));
-  // console.log(convertUserInfo.user_ID);
+  // console.log(convertUserInfo);
   // userInfo.innerHTML = convertUserInfo.user_ID;
   time.addEventListener('click', (e) => {
     const selectedSeat = localStorage.getItem('selectedSeat');
@@ -46,5 +80,7 @@ closeModal.addEventListener('click', () => {
   modal.style.display = 'none';
 });
 
-console.log(seat);
+seatEnable();
+paintUser();
+// console.log(seat);
 console.log(modal);

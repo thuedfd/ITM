@@ -31,11 +31,12 @@
   justify-content: space-between;
   align-items: center;
   width: 300px;
-  height: 250px;
+  height: 350px;
   padding: 20px 10px;
   background: #fff;
   border: 2px solid #666;
 }
+
 
 #modal .modal-item {
   display: flex;
@@ -57,3 +58,13 @@
 .info-box {
   text-align: center;
 }
+
+.time-select{
+  border-radius:3px !important;
+}
+
+.time-select:hover{
+    background: #ff9800 !important;
+    color: white;
+  }
+  

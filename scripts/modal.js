@@ -39,8 +39,23 @@ function getNowHour() {
   return hours;
 }
 
+function seatEnable(){
+  today = new Date();
+  for(var i=1;i<13;i++){
+    if(i*2<=today.getHours())
+    enabled(i);
+  }
+}
+
+function enabled(seatnumber){
+  var button_joinus = document.getElementById("seat"+seatnumber);
+  button_joinus.disabled=true;
+}
+
+
 function Init() {
   modal.style.display = 'none';
 }
 
 Init();
+seatEnable();

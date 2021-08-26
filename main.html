@@ -19,6 +19,7 @@
     <nav>
       <button onclick="window.location.href='tutorial.html'">쪽지함</button>
       <button onclick="window.location.href='login.html'">로그아웃</button>
+      <div id="currentUser"></div>
     </nav>
     <div id="redbox"></div>
     <div id="graybox"></div>
@@ -73,53 +74,59 @@
           <button id="close-modal" class="modal_close_btn">X</button>
           <h2 class="modal-title">예약하기</h2>
         
-          <div>
-            <button type="button" id="seat1" class="time-select">
-              00~02</button
-            ><button type="button" id="seat7" class="time-select">
-              12~14
-            </button>
-          </div>
-  
-        <div>
-          <button type="button" id="seat2" class="time-select">
-            02~04</button
-          ><button type="button" id="seat8" class="time-select">
-            14~16
-          </button>
-        </div>
-  
-        <div>
-          <button type="button" id="seat3" class="time-select">
-            04~06</button
-          ><button type="button" id="seat9" class="time-select">
-            16~18
-          </button>
-        </div>
-  
-        <div>
-          <button type="button" id="seat4" class="time-select">
-            06~08</button
-          ><button type="button" id="seat10" class="time-select">
-            18~20
-          </button>
-        </div>
-  
-        <div>
-          <button type="button" id="seat5"  class="time-select">
-            08~10</button
-          ><button type="button" id="seat11" class="time-select">
-            20~22
-          </button>
-        </div>
-  
-        <div>
-          <button type="button" id="seat6" class="time-select">
-            10~12</button
-          ><button type="button" id="seat12" class="time-select">
-            22~24
-          </button>
-        </div>
+          <table class ="time_table">
+              <tr>
+                <td>
+                    <button class="time-select" id="seat_1">00~02</button>
+                </td>            
+                <td>
+                    <button class="time-select" id="seat_7">12~14</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="time-select" id="seat_2">02~04</button>
+                </td>
+                <td>
+                    <button class="time-select" id="seat_8">14~16</button>
+                </td>
+            
+            </tr>
+            <tr>
+                <td>
+                    <button class="time-select" id="seat_3">04~06</button>
+                </td>            
+                <td>
+                    <button class="time-select" id="seat_9">16~18</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="time-select" id="seat_4">06~08</button>
+                </td>
+                <td>
+                    <button class="time-select" id="seat_10">18~20</button>
+                </td>
+            
+            </tr>
+            <tr>
+                <td>
+                    <button class="time-select" id="seat_5">08~10</button>
+                </td>            
+                <td>
+                    <button class="time-select" id="seat_11">20~22</button>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <button class="time-select" id="seat_6">10~12</button>
+                </td>
+                <td>
+                    <button class="time-select" id="seat_12">22~24</button>
+                </td>
+            
+            </tr>           
+        </table> 
         
           <div class="button-list">
             <p class="info-box">user ID : <span class="user-info"> </span></p>
